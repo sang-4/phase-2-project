@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom'
 import './App.css';
 import Coin from './Coin';
 import { Container } from 'react-bootstrap';
@@ -26,6 +26,7 @@ function App() {
   return (
     <div className="App">
       <div className="coin-search">
+
 
     </div>
 
