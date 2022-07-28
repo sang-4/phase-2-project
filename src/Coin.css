@@ -2,10 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #E3B5CD;
-    background: -webkit-linear-gradient(top left, #E3B5CD, #21F75C);
-    background: -moz-linear-gradient(top left, #E3B5CD, #21F75C);
-    background: linear-gradient(to bottom right, #E3B5CD, #21F75C);
+    
+   
 }
 .coin-row{
     display: flex;
