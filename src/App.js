@@ -9,7 +9,7 @@ function App() {
   const [coins,setCoins] = useState([])
   const [search,setSearch] = useState('')
   useEffect(() => {
-    fetch(' http://localhost:3000/crypto')
+    fetch(' https://salty-depths-82016.herokuapp.com/crypto')
     .then(res=> res.json())
     .then(data =>setCoins(data))
     .catch(error=>console.log(error))
