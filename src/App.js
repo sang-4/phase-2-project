@@ -33,7 +33,6 @@ function App() {
       </div>
       {filteredCoins.map(coin=>{
         return(
-          // <Home>
           <Coin 
           key={coin.id} 
           name={coin.name} 
@@ -43,7 +42,6 @@ function App() {
           price={coin.current_price}
           pricechange={coin.price_change_percentage_24h}
           />
-          // </Home>
         )
       })}
 

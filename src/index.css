@@ -6,8 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: aqua;
   background-color: darkgrey;
-  justify-content: space-between;
-  max-width: 100%;
+  
 }
 
 code {
