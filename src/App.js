@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Coin from './Coin';
+// import Home from './Components/Home'; 
+
 
 
 function App() {
   const [coins,setCoins] = useState([])
   const [search,setSearch] = useState('')
   useEffect(() => {
-    fetch(' http://localhost:3000/crypto')
+    fetch(' https://salty-depths-82016.herokuapp.com/crypto')
     .then(res=> res.json())
     .then(data =>setCoins(data))
     .catch(error=>console.log(error))
@@ -40,7 +42,7 @@ function App() {
           price={coin.current_price}
           pricechange={coin.price_change_percentage_24h}
           />
-        );
+        )
       })}
 
 
