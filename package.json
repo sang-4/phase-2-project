@@ -1,6 +1,7 @@
 {
   "name": "phase-2-project",
   "version": "0.1.0",
+  "homepage": "https://sang-4.github.io/phase-2-project",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
@@ -11,10 +12,13 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -37,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
