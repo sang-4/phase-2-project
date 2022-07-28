@@ -1,46 +1,49 @@
-import React, {useEffect, useState} from 'react';
-import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Coin from './Coin';
-import { Container } from 'react-bootstrap';
-import {blue} from "@material-ui/core/colors";
+
 
 function App() {
-  const [coins, setCoins] = useState([]);
-  const [search, setSearch] = useState('')
-  useEffect(()=>{
-    fetch('https://api.coincap.io/v2/assets')
-    .then(res=>{
-      setCoins(res.data)
-      console.log(res.data)
-    }).catch(error=> console.error(error))
+  const [coins,setCoins] = useState([])
+  const [search,setSearch] = useState('')
+  useEffect(() => {
+    fetch('https://api.coingecko.com/apiv3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false')
+    .then(res=> res.json())
+    .then(data =>setCoins(data))
+    .catch(error=>console.log(error))
   }, [])
-
   const handleChange = e =>{
-    setSearch(e.target.value);
+    setSearch(e.target.value)
   }
- 
-  const filteredCoins= coins.filter(coin =>
-    coins.name().inludes(search)
+  const filteredCoins = coins.filter(coin=> coin.name.toLowerCase().includes(search.toLowerCase()
     )
+    )
+
   return (
-    <div className="App">
+    <div className="coin-app">
       <div className="coin-search">
+        <h1 className="coin-text">Search your desired coin</h1>
+        <form action="">
+          <input type="text" className="coin-input" placeholder="Provide the coin name" onChange={handleChange}/>
+
+        </form>
+
+      </div>
+      {filteredCoins.map(coin=>{
+        return(
+          <Coin 
+          key={coin.id} 
+          name={coin.name} 
+          image={coin.image} 
+          symbol={coin.symbol}
+          marketcap={coin.market_cap}
+          price={coin.current_price}
+          pricechange={coin.price_change_percentage_24h}
+          />
+        );
+      })}
 
 
-    </div>
-
-    {filteredCoins.map(coin=>{
-    return(
-      <Coin
-      key={coin.id}
-      name={coin.name}
-      image={coin.image}
-      symbol={coin.symbol}
-      pricechange={coin.price_change_perentage_24h}
-      />
-    );
-    })}
     </div>
   );
 }
