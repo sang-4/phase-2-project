@@ -1,6 +1,6 @@
 import React from 'react'
-// import { blue } from '@material-ui/core/colors';
-// import { makeStyles } from '@material-ui/core/styles';
+import { blue } from '@material-ui/core/colors';
+import { makeStyles } from '@material-ui/core/styles';
 
 function Home(){
     return (
