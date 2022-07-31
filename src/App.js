@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Coin from './Coin';
+// import Navbar from './Navbar';
 // import Home from './Components/Home'; 
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -23,6 +25,9 @@ function App() {
 
   return (
     <div className="coin-app">
+       <Button variant="success">Home </Button>{' '}
+       <Button variant="success">About </Button>{' '}
+       <Button variant="success">Contact Us </Button>{' '}
       <div className="coin-search">
         <h1 className="coin-text">CryptIt</h1>
         <form action="">
@@ -31,6 +36,8 @@ function App() {
         </form>
 
       </div>
+    
+
       {filteredCoins.map(coin=>{
         return(
           <Coin 
@@ -49,5 +56,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
